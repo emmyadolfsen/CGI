@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Emmys Space Input</h1>
+    <p>Skicka ut texten i rymden</p>
+
+
+    <form method="POST">
+    <label for="textInput">Text här</label>
+    <br>
+    <textarea id="textInput" name="textInput" rows="4" cols="50"></textarea>
+    <br>
+    <input type="submit" />
+    </form>
+
+    <ul>
+    @if (ViewBag.hashList != null)
+    {
+    @for (int i = 0; i < ViewBag.hashList.Count && i < 10; i++)
+    {
+        <li>@ViewBag.hashList[i]</li>
+    }}
+    </ul>
+</div>
